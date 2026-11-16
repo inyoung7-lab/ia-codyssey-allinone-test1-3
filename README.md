@@ -86,10 +86,10 @@ python main.py
 
 | 크기 | 반복 횟수 | N² | 2D 평균(ms) | 1D 평균(ms) |
 |---|---:|---:|---:|---:|
-| 3×3 | 10 | 9 | 0.000800 | 0.000430 |
-| 5×5 | 10 | 25 | 0.001490 | 0.000890 |
-| 13×13 | 10 | 169 | 0.007800 | 0.005240 |
-| 25×25 | 10 | 625 | 0.027360 | 0.021300 |
+| 3×3 | 10 | 9 | 0.000810 | 0.000450 |
+| 5×5 | 10 | 25 | 0.001470 | 0.000880 |
+| 13×13 | 10 | 169 | 0.007640 | 0.005130 |
+| 25×25 | 10 | 625 | 0.027270 | 0.021270 |
 
 ## 증빙 이미지
 
@@ -104,13 +104,13 @@ python main.py
 
 ## VS Code에서 임시 JSON 실행 및 캡처
 
-아래 임시 폴더는 이전 제출 전 점검 때 만든 호환성 샘플이며, 패턴에 구버전 `matrix` 키를 사용합니다. 이번 과제 필수 `input` 스키마 검증에는 이 폴더를 사용하지 않았습니다.
+`submission_check_temp/official_input8/`에는 최신 루트 `main.py` 복사본과 `input` 전용 8건 검증 JSON을 캡처용으로 보관합니다. 상위 폴더의 이전 `submission_check_temp/data.json`은 구버전 `matrix` 키를 쓰는 호환성 샘플이므로 이번 검증에 사용하지 않았습니다.
 
 VS Code PowerShell 터미널에서 다음 두 줄을 실행하면 모드 2가 시작되고 콘솔 출력이 나타납니다.
 
 ```powershell
 $env:PYTHONIOENCODING = 'utf-8'
-Set-Location -LiteralPath 'C:\Users\userr\codyssey\ia-codyssey-allinone-test1-3\submission_check_temp'
+Set-Location -LiteralPath 'C:\Users\userr\codyssey\ia-codyssey-allinone-test1-3\submission_check_temp\official_input8'
 '2' | python .\main.py
 ```
 
