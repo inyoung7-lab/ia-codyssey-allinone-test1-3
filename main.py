@@ -267,16 +267,18 @@ def _extract_pattern(raw_pattern, key):
     size = int(match.group(1))
     if size <= 0:
         raise ValueError("키의 N은 양의 정수여야 합니다.")
-    raw_matrix = raw_pattern.get("matrix")
-    if raw_matrix is None:
-        # Accept common descriptive aliases while keeping one canonical format.
-        for alias in ("pattern", "data", "values"):
+    input_field = None
+    if "input" in raw_pattern:
+        input_field = "input"
+    else:
+        # Keep earlier field names as fallbacks; the assignment schema is input.
+        for alias in ("matrix", "pattern", "data", "values"):
             if alias in raw_pattern:
-                raw_matrix = raw_pattern[alias]
+                input_field = alias
                 break
-    if raw_matrix is None:
-        raise ValueError("패턴 행렬 필드가 없습니다 (matrix).")
-    matrix = _json_matrix(raw_matrix, size, "patterns.{}.matrix".format(key))
+    if input_field is None:
+        raise ValueError("패턴 입력 필드가 없습니다 (input).")
+    matrix = _json_matrix(raw_pattern[input_field], size, "patterns.{}.{}".format(key, input_field))
     expected = _normalize_expected(raw_pattern.get("expected"))
     return size, matrix, expected
 
