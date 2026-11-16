@@ -86,10 +86,10 @@ python main.py
 
 | 크기 | 반복 횟수 | N² | 2D 평균(ms) | 1D 평균(ms) |
 |---|---:|---:|---:|---:|
-| 3×3 | 10 | 9 | 0.000810 | 0.000450 |
-| 5×5 | 10 | 25 | 0.001470 | 0.000880 |
-| 13×13 | 10 | 169 | 0.007640 | 0.005130 |
-| 25×25 | 10 | 625 | 0.027270 | 0.021270 |
+| 3×3 | 10 | 9 | 0.001470 | 0.000880 |
+| 5×5 | 10 | 25 | 0.002520 | 0.001560 |
+| 13×13 | 10 | 169 | 0.013880 | 0.008880 |
+| 25×25 | 10 | 625 | 0.049990 | 0.036640 |
 
 ## 증빙 이미지
 
@@ -98,7 +98,7 @@ python main.py
 - [직접 입력 오류 복구 후 B 판정](docs/screenshots/01_manual_input_recovery.png)
 - [A=0, B=1e-10 허용오차 판정 불가](docs/screenshots/02_epsilon_undecided.png)
 - [자동 생성 Cross의 A 판정](docs/screenshots/03_generated_cross.png)
-- [이전 JSON 캡처 (구 `matrix` 키, 7건 검증)](docs/screenshots/04_json_and_benchmark.png)
+- [공식 `input` JSON 캡처 (8건, 6 PASS·2 FAIL)](docs/screenshots/04_json_and_benchmark.png)
 
 네 PNG의 ZIP은 Windows 다운로드 폴더의 `mini-npu-mission-screenshots.zip`에 있습니다. 원본 PNG는 다운로드 폴더에 보존했습니다.
 
