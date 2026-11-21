@@ -1,6 +1,6 @@
 # Mini NPU Simulator
 
-[실습·발표 가이드](docs/mission-guide.md)에서 시연 순서, 입력값, 설명 대본을 확인할 수 있습니다.
+[Mini NPU Simulator 구현 및 검증](docs/mission-guide.md)에 기능별 실행 방법, 입력값, 검증 결과를 정리했습니다.
 
 Python 3.8 이상, 표준 라이브러리만으로 실행하는 MAC 시뮬레이터입니다. 같은 위치의 필터와 패턴 값을 곱해 누적하고 Cross/X 점수를 비교합니다.
 
